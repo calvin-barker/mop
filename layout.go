@@ -38,10 +38,10 @@ type Layout struct {
 func NewLayout() *Layout {
 	layout := &Layout{}
 	layout.columns = []Column{
-		{-20, `Ticker`, `Ticker`, nil},
+		{-19, `Ticker`, `Ticker`, nil},
 		{10, `LastTrade`, `Last`, currency},
-		{10, `Change`, `Change`, currency},
 		{10, `ChangePct`, `Change%`, last},
+		{10, `Change`, `Change`, currency},
 		{10, `Open`, `Open`, currency},
 		{10, `Low`, `Low`, currency},
 		{10, `High`, `High`, currency},
@@ -219,6 +219,8 @@ func highlight(collections ...map[string]string) {
 	for _, collection := range collections {
 		if collection[`change`][0:1] != `-` {
 			collection[`change`] = `<green>` + collection[`change`] + `</>`
+		} else if collection[`change`][0:1] == `-` {
+		    collection[`change`] = `<red>` + collection[`change`] + `</>`
 		}
 	}
 }
