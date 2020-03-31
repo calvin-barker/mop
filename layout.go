@@ -40,8 +40,8 @@ func NewLayout() *Layout {
 	layout.columns = []Column{
 		{-19, `Ticker`, `Ticker`, nil},
 		{10, `LastTrade`, `Last`, currency},
-		{10, `ChangePct`, `Change%`, last},
 		{10, `Change`, `Change`, currency},
+		{10, `ChangePct`, `Change%`, last},
 		{10, `Open`, `Open`, currency},
 		{10, `Low`, `Low`, currency},
 		{10, `High`, `High`, currency},
